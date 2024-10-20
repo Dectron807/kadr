@@ -1,0 +1,49 @@
+﻿<Window x:Class="kadr.EmployeePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Управление сотрудниками" Height="450" Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">
+            <TextBlock FontSize="20" FontWeight="Bold" Text="Список сотрудников"/>
+
+            <!-- Таблица с сотрудниками -->
+            <DataGrid x:Name="EmployeeDataGrid" AutoGenerateColumns="True" Height="200" Width="700" Margin="10" SelectionChanged="EmployeeDataGrid_SelectionChanged"/>
+
+            <!-- Поля для редактирования сотрудника -->
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Фамилия" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtLastName" Width="100"/>
+                <TextBlock Text="Имя" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtFirstName" Width="100"/>
+                <TextBlock Text="Отчество" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtMiddleName" Width="100"/>
+                <TextBlock Text="Телефон" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtPhone" Width="100"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Email" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtEmail" Width="200"/>
+                <TextBlock Text="Дата рождения" VerticalAlignment="Center"/>
+                <DatePicker x:Name="datePickerBirthDate" Width="100"/>
+                <TextBlock Text="Дата приема" VerticalAlignment="Center"/>
+                <DatePicker x:Name="datePickerHireDate" Width="100"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text="ID Должности" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtPositionID" Width="100"/>
+                <TextBlock Text="ID Отдела" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtDepartmentID" Width="100"/>
+            </StackPanel>
+
+            <!-- Кнопки управления -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Добавить сотрудника" Click="AddEmployeeButton_Click"/>
+                <Button Content="Редактировать сотрудника" Click="EditEmployeeButton_Click"/>
+                <Button Content="Удалить сотрудника" Click="DeleteEmployeeButton_Click"/>
+                <Button Content="Назад" Click="BackButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
